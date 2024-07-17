@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsRtl = () => {
@@ -12,7 +11,9 @@ const ComponentsSweetAlertsRtl = () => {
             showCancelButton: true,
             showCloseButton: true,
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
 
@@ -29,7 +30,9 @@ const showAlert = async () => {
         showCancelButton: true,
         showCloseButton: true,
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     });
 }
 

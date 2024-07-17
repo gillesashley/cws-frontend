@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsSuccess = () => {
@@ -8,11 +7,14 @@ const ComponentsSweetAlertsSuccess = () => {
         Swal.fire({
             icon: 'success',
             title: 'Good job!',
-            text: 'You clicked the!',
+            text: 'You clicked the button!',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
+
     return (
         <PanelCodeHighlight
             title="Success message"
@@ -21,9 +23,11 @@ const showAlert = async () => {
     Swal.fire({
         icon: 'success',
         title: 'Good job!',
-        text: 'You clicked the!',
+        text: 'You clicked the button!',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     });
 };
 
@@ -33,7 +37,7 @@ const showAlert = async () => {
             Success message!
         </button>
     </div>
-</div>      `}
+</div>`}
         >
             <div className="mb-5">
                 <div className="flex items-center justify-center">

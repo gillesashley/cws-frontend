@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsHtml = () => {
@@ -12,12 +11,14 @@ const ComponentsSweetAlertsHtml = () => {
             showCloseButton: true,
             showCancelButton: true,
             focusConfirm: false,
-            confirmButtonText: '<i className="flaticon-checked-1"></i> Great!',
+            confirmButtonText: '<i class="flaticon-checked-1"></i> Great!',
             confirmButtonAriaLabel: 'Thumbs up, great!',
-            cancelButtonText: '<i className="flaticon-cancel-circle"></i> Cancel',
+            cancelButtonText: '<i class="flaticon-cancel-circle"></i> Cancel',
             cancelButtonAriaLabel: 'Thumbs down',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
 
@@ -34,12 +35,14 @@ const showAlert = async () => {
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,
-        confirmButtonText: '<i className="flaticon-checked-1"></i> Great!',
+        confirmButtonText: '<i class="flaticon-checked-1"></i> Great!',
         confirmButtonAriaLabel: 'Thumbs up, great!',
-        cancelButtonText: '<i className="flaticon-cancel-circle"></i> Cancel',
+        cancelButtonText: '<i class="flaticon-cancel-circle"></i> Cancel',
         cancelButtonAriaLabel: 'Thumbs down',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     });
 }
 

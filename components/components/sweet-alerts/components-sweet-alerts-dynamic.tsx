@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsDynamic = () => {
@@ -11,20 +10,26 @@ const ComponentsSweetAlertsDynamic = () => {
             confirmButtonText: 'Show my public IP',
             text: 'Your public IP will be received via AJAX request',
             showLoaderOnConfirm: true,
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
             preConfirm: async () => {
                 try {
                     const response = await fetch(ipAPI);
                     const data = await response.json();
                     Swal.fire({
                         title: data.ip,
-                        customClass: 'sweet-alerts',
+                        customClass: {
+                            container: 'sweet-alerts',
+                        },
                     });
                 } catch {
                     Swal.fire({
                         icon: 'error',
                         title: 'Unable to get your public IP',
-                        customClass: 'sweet-alerts',
+                        customClass: {
+                            container: 'sweet-alerts',
+                        },
                     });
                 }
             },
@@ -43,33 +48,31 @@ const showAlert = async () => {
         confirmButtonText: 'Show my public IP',
         text: 'Your public IP will be received via AJAX request',
         showLoaderOnConfirm: true,
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
         preConfirm: async () => {
             try {
                 const response = await fetch(ipAPI);
                 const data = await response.json();
                 Swal.fire({
                     title: data.ip,
-                    customClass: 'sweet-alerts',
+                    customClass: {
+                        container: 'sweet-alerts'
+                    },
                 });
             } catch {
                 Swal.fire({
                     icon: 'error',
                     title: 'Unable to get your public IP',
-                    customClass: 'sweet-alerts',
+                    customClass: {
+                        container: 'sweet-alerts'
+                    },
                 });
             }
         },
     });
-}
-
-<div className="mb-5">
-    <div className="flex items-center justify-center">
-        <button type="button" className="btn btn-success" onClick={() => showAlert()}>
-            Dynamic queue
-        </button>
-    </div>
-</div>`}
+}`}
         >
             <div className="mb-5">
                 <div className="flex items-center justify-center">

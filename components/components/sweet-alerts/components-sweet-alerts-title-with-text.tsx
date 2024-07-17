@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsTitleWithText = () => {
@@ -10,7 +9,9 @@ const ComponentsSweetAlertsTitleWithText = () => {
             title: 'The Internet?',
             text: 'That thing is still around?',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
 
@@ -25,7 +26,9 @@ const showAlert = async () => {
         title: 'The Internet?',
         text: 'That thing is still around?',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     });
 }
 

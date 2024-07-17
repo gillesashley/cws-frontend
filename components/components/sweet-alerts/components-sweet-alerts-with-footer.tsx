@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsWithFooter = () => {
@@ -11,7 +10,9 @@ const ComponentsSweetAlertsWithFooter = () => {
             text: 'Something went wrong!',
             footer: '<a href="javascript:;">Why do I have this issue?</a>',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
     return (
@@ -26,7 +27,9 @@ const showAlert = async () => {
         text: 'Something went wrong!',
         footer: '<a href="javascript:;">Why do I have this issue?</a>',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     });
 }
 

@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsWarning = () => {
@@ -12,13 +11,23 @@ const ComponentsSweetAlertsWarning = () => {
             showCancelButton: true,
             confirmButtonText: 'Delete',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         }).then((result) => {
             if (result.value) {
-                Swal.fire({ title: 'Deleted!', text: 'Your file has been deleted.', icon: 'success', customClass: 'sweet-alerts' });
+                Swal.fire({
+                    title: 'Deleted!',
+                    text: 'Your file has been deleted.',
+                    icon: 'success',
+                    customClass: {
+                        container: 'sweet-alerts',
+                    },
+                });
             }
         });
     };
+
     return (
         <PanelCodeHighlight
             title='Warning message, with "Confirm" button'
@@ -32,10 +41,19 @@ const showAlert = async () => {
         showCancelButton: true,
         confirmButtonText: 'Delete',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts'
+        },
     }).then((result) => {
         if (result.value) {
-            Swal.fire({ title: 'Deleted!', text: 'Your file has been deleted.', icon: 'success', customClass: 'sweet-alerts' });
+            Swal.fire({ 
+                title: 'Deleted!', 
+                text: 'Your file has been deleted.', 
+                icon: 'success', 
+                customClass: {
+                    container: 'sweet-alerts'
+                }
+            });
         }
     });
 }

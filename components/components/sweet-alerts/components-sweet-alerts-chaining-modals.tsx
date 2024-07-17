@@ -1,6 +1,5 @@
 'use client';
 import PanelCodeHighlight from '@/components/panel-code-highlight';
-import React from 'react';
 import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsChainingModals = () => {
@@ -16,7 +15,9 @@ const ComponentsSweetAlertsChainingModals = () => {
             },
             validationMessage: 'This field is required',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
         const values: any = [];
         let currentStep;
@@ -27,7 +28,9 @@ const ComponentsSweetAlertsChainingModals = () => {
                 inputValue: values[currentStep],
                 showCancelButton: currentStep > 0,
                 currentProgressStep: currentStep,
-                customClass: 'sweet-alerts',
+                customClass: {
+                    container: 'sweet-alerts',
+                },
             });
             if (result.value) {
                 values[currentStep] = result.value;
@@ -39,21 +42,24 @@ const ComponentsSweetAlertsChainingModals = () => {
             }
         }
         if (currentStep === steps.length) {
-            Swal.fire({
+            await Swal.fire({
                 title: 'All done!',
                 padding: '2em',
                 html: 'Your answers: <pre>' + JSON.stringify(values) + '</pre>',
                 confirmButtonText: 'Lovely!',
-                customClass: 'sweet-alerts',
+                customClass: {
+                    container: 'sweet-alerts',
+                },
             });
         }
     };
+
     return (
         <PanelCodeHighlight
             title="Chaining modals (queue)"
             codeHighlight={`import Swal from 'sweetalert2';
 
-const showAlert = async() => {
+const showAlert = async () => {
     const steps = ['1', '2', '3'];
     const swalQueueStep = Swal.mixin({
         confirmButtonText: 'Next →',
@@ -65,7 +71,9 @@ const showAlert = async() => {
         },
         validationMessage: 'This field is required',
         padding: '2em',
-        customClass: 'sweet-alerts',
+        customClass: {
+            container: 'sweet-alerts',
+        },
     });
     const values: any = [];
     let currentStep;
@@ -76,7 +84,9 @@ const showAlert = async() => {
             inputValue: values[currentStep],
             showCancelButton: currentStep > 0,
             currentProgressStep: currentStep,
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
         if (result.value) {
             values[currentStep] = result.value;
@@ -88,19 +98,21 @@ const showAlert = async() => {
         }
     }
     if (currentStep === steps.length) {
-        Swal.fire({
+        await Swal.fire({
             title: 'All done!',
             padding: '2em',
             html: 'Your answers: <pre>' + JSON.stringify(values) + '</pre>',
             confirmButtonText: 'Lovely!',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     }
 }
 
 <div className="mb-5">
     <div className="flex items-center justify-center">
-        <button type="button" className="btn btn-warning" onClick={() => showAlert()}>
+        <button type="button" className="btn btn-warning" onClick={showAlert}>
             Chaining modals (queue)
         </button>
     </div>
@@ -108,7 +120,7 @@ const showAlert = async() => {
         >
             <div className="mb-5">
                 <div className="flex items-center justify-center">
-                    <button type="button" className="btn btn-warning" onClick={() => showAlert()}>
+                    <button type="button" className="btn btn-warning" onClick={showAlert}>
                         Chaining modals (queue)
                     </button>
                 </div>
