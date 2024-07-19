@@ -119,16 +119,16 @@ const Sidebar = () => {
                                 <AnimateHeight duration={300} height={currentMenu === 'dashboard' ? 'auto' : 0}>
                                     <ul className="sub-menu text-gray-500">
                                         <li>
-                                            <Link href="/">{t('sales')}</Link>
+                                            <Link href="/">{t('Performance')}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/analytics">{t('analytics')}</Link>
+                                            <Link href="/analytics">{t('User Analytics')}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/finance">{t('finance')}</Link>
+                                            <Link href="/finance">{t('Points & Payments')}</Link>
                                         </li>
                                         <li>
-                                            <Link href="/crypto">{t('crypto')}</Link>
+                                            <Link href="/crypto">{t('Campaign Monitoring')}</Link>
                                         </li>
                                     </ul>
                                 </AnimateHeight>
@@ -136,12 +136,73 @@ const Sidebar = () => {
 
                             <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
-                                <span>{t('apps')}</span>
+                                <span>{t('Campaign Center')}</span>
+                            </h2>
+
+                            <li className="menu nav-item">
+                                <Link href="/tables" className="group">
+                                    <div className="flex items-center">
+                                        <IconMenuTables className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('CWS Content')}</span>
+                                    </div>
+                                </Link>
+                            </li>
+
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'Constitency Content' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Constitency Content')}>
+                                    <div className="flex items-center">
+                                        <IconMenuDatatables className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Constitency Content')}</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'Constitency Content' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'Constitency Content' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/datatables/basic">{t('SMS')}</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/datatables/advanced">{t('WhatsApp')}</Link>
+                                        </li>
+                                    </ul>
+                                </AnimateHeight>
+                            </li>
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'Follow-Ups' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Follow-Ups')}>
+                                    <div className="flex items-center">
+                                        <IconMenuForms className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Follow-Ups')}</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'Follow-Ups' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'Follow-Ups' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/forms/basic">{t('Reminders')}</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/forms/input-group">{t('Pledged Votes')}</Link>
+                                        </li>
+                                    </ul>
+                                </AnimateHeight>
+                            </li>                
+
+                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                                <IconMinus className="hidden h-5 w-4 flex-none" />
+                                <span>{t('Essentials')}</span>
                             </h2>
 
                             <li className="nav-item">
                                 <ul>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link href="/apps/chat" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuChat className="shrink-0 group-hover:!text-primary" />
@@ -180,7 +241,7 @@ const Sidebar = () => {
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('scrumboard')}</span>
                                             </div>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                     <li className="nav-item">
                                         <Link href="/apps/contacts" className="group">
                                             <div className="flex items-center">
@@ -191,18 +252,18 @@ const Sidebar = () => {
                                     </li>
 
                                     <li className="menu nav-item">
-                                        <button type="button" className={`${currentMenu === 'invoice' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('invoice')}>
+                                        <button type="button" className={`${currentMenu === 'Withdrawals' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Withdrawals')}>
                                             <div className="flex items-center">
                                                 <IconMenuInvoice className="shrink-0 group-hover:!text-primary" />
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('invoice')}</span>
+                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Withdrawals')}</span>
                                             </div>
 
-                                            <div className={currentMenu !== 'invoice' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                            <div className={currentMenu !== 'Withdrawals' ? '-rotate-90 rtl:rotate-90' : ''}>
                                                 <IconCaretDown />
                                             </div>
                                         </button>
 
-                                        <AnimateHeight duration={300} height={currentMenu === 'invoice' ? 'auto' : 0}>
+                                        <AnimateHeight duration={300} height={currentMenu === 'Withdrawals' ? 'auto' : 0}>
                                             <ul className="sub-menu text-gray-500">
                                                 <li>
                                                     <Link href="/apps/invoice/list">{t('list')}</Link>
@@ -210,34 +271,23 @@ const Sidebar = () => {
                                                 <li>
                                                     <Link href="/apps/invoice/preview">{t('preview')}</Link>
                                                 </li>
-                                                <li>
-                                                    <Link href="/apps/invoice/add">{t('add')}</Link>
-                                                </li>
-                                                <li>
-                                                    <Link href="/apps/invoice/edit">{t('edit')}</Link>
-                                                </li>
                                             </ul>
                                         </AnimateHeight>
                                     </li>
 
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link href="/apps/calendar" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('calendar')}</span>
                                             </div>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </li>
 
-                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
-                                <IconMinus className="hidden h-5 w-4 flex-none" />
-                                <span>{t('user_interface')}</span>
-                            </h2>
-
-                            <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'component' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('component')}>
+                            {/* <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'REgions' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('component')}>
                                     <div className="flex items-center">
                                         <IconMenuComponents className="shrink-0 group-hover:!text-primary" />
                                         <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('components')}</span>
@@ -294,9 +344,9 @@ const Sidebar = () => {
                                         </li>
                                     </ul>
                                 </AnimateHeight>
-                            </li>
+                            </li> */}
 
-                            <li className="menu nav-item">
+                            {/* <li className="menu nav-item">
                                 <button type="button" className={`${currentMenu === 'element' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('element')}>
                                     <div className="flex items-center">
                                         <IconMenuElements className="shrink-0 group-hover:!text-primary" />
@@ -366,9 +416,9 @@ const Sidebar = () => {
                                         </li>
                                     </ul>
                                 </AnimateHeight>
-                            </li>
+                            </li> */}
 
-                            <li className="menu nav-item">
+                            {/* <li className="menu nav-item">
                                 <Link href="/charts" className="group">
                                     <div className="flex items-center">
                                         <IconMenuCharts className="shrink-0 group-hover:!text-primary" />
@@ -402,139 +452,11 @@ const Sidebar = () => {
                                         <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('drag_and_drop')}</span>
                                     </div>
                                 </Link>
-                            </li>
+                            </li> */}                  
 
                             <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
-                                <span>{t('tables_and_forms')}</span>
-                            </h2>
-
-                            <li className="menu nav-item">
-                                <Link href="/tables" className="group">
-                                    <div className="flex items-center">
-                                        <IconMenuTables className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('tables')}</span>
-                                    </div>
-                                </Link>
-                            </li>
-
-                            <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'datalabel' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('datalabel')}>
-                                    <div className="flex items-center">
-                                        <IconMenuDatatables className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('datatables')}</span>
-                                    </div>
-
-                                    <div className={currentMenu !== 'datalabel' ? '-rotate-90 rtl:rotate-90' : ''}>
-                                        <IconCaretDown />
-                                    </div>
-                                </button>
-
-                                <AnimateHeight duration={300} height={currentMenu === 'datalabel' ? 'auto' : 0}>
-                                    <ul className="sub-menu text-gray-500">
-                                        <li>
-                                            <Link href="/datatables/basic">{t('basic')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/advanced">{t('advanced')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/skin">{t('skin')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/order-sorting">{t('order_sorting')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/multi-column">{t('multi_column')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/multiple-tables">{t('multiple_tables')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/alt-pagination">{t('alt_pagination')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/checkbox">{t('checkbox')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/range-search">{t('range_search')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/export">{t('export')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/datatables/column-chooser">{t('column_chooser')}</Link>
-                                        </li>
-                                    </ul>
-                                </AnimateHeight>
-                            </li>
-
-                            <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'forms' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('forms')}>
-                                    <div className="flex items-center">
-                                        <IconMenuForms className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('forms')}</span>
-                                    </div>
-
-                                    <div className={currentMenu !== 'forms' ? '-rotate-90 rtl:rotate-90' : ''}>
-                                        <IconCaretDown />
-                                    </div>
-                                </button>
-
-                                <AnimateHeight duration={300} height={currentMenu === 'forms' ? 'auto' : 0}>
-                                    <ul className="sub-menu text-gray-500">
-                                        <li>
-                                            <Link href="/forms/basic">{t('basic')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/input-group">{t('input_group')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/layouts">{t('layouts')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/validation">{t('validation')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/input-mask">{t('input_mask')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/select2">{t('select2')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/touchspin">{t('touchspin')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/checkbox-radio">{t('checkbox_and_radio')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/switches">{t('switches')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/wizards">{t('wizards')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/file-upload">{t('file_upload')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/quill-editor">{t('quill_editor')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/markdown-editor">{t('markdown_editor')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/date-picker">{t('date_and_range_picker')}</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/forms/clipboard">{t('clipboard')}</Link>
-                                        </li>
-                                    </ul>
-                                </AnimateHeight>
-                            </li>
-
-                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
-                                <IconMinus className="hidden h-5 w-4 flex-none" />
-                                <span>{t('user_and_pages')}</span>
+                                <span>{t('User & Help')}</span>
                             </h2>
 
                             <li className="menu nav-item">
@@ -562,36 +484,37 @@ const Sidebar = () => {
                             </li>
 
                             <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'page' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('page')}>
+                                <button type="button" className={`${currentMenu === 'Help' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Help')}>
                                     <div className="flex items-center">
                                         <IconMenuPages className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('pages')}</span>
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Help')}</span>
                                     </div>
 
-                                    <div className={currentMenu !== 'page' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                    <div className={currentMenu !== 'Help' ? '-rotate-90 rtl:rotate-90' : ''}>
                                         <IconCaretDown />
                                     </div>
                                 </button>
 
-                                <AnimateHeight duration={300} height={currentMenu === 'page' ? 'auto' : 0}>
+                                <AnimateHeight duration={300} height={currentMenu === 'Help' ? 'auto' : 0}>
                                     <ul className="sub-menu text-gray-500">
-                                        <li>
+                                        {/* <li>
                                             <Link href="/pages/knowledge-base">{t('knowledge_base')}</Link>
                                         </li>
                                         <li>
                                             <Link href="/pages/contact-us-boxed" target="_blank">
                                                 {t('contact_us_boxed')}
                                             </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/pages/contact-us-cover" target="_blank">
-                                                {t('contact_us_cover')}
-                                            </Link>
-                                        </li>
+                                        </li>*/}
                                         <li>
                                             <Link href="/pages/faq">{t('faq')}</Link>
                                         </li>
                                         <li>
+                                            <Link href="/pages/contact-us-cover" target="_blank">
+                                                {t('Contact Admin')}
+                                            </Link>
+                                        </li> 
+                                        
+                                        {/* <li>
                                             <Link href="/pages/coming-soon-boxed" target="_blank">
                                                 {t('coming_soon_boxed')}
                                             </Link>
@@ -600,8 +523,8 @@ const Sidebar = () => {
                                             <Link href="/pages/coming-soon-cover" target="_blank">
                                                 {t('coming_soon_cover')}
                                             </Link>
-                                        </li>
-                                        <li className="menu nav-item">
+                                        </li> */}
+                                        {/* <li className="menu nav-item">
                                             <button
                                                 type="button"
                                                 className={`${
@@ -639,19 +562,19 @@ const Sidebar = () => {
                                             <Link href="/pages/maintenence" target="_blank">
                                                 {t('maintenence')}
                                             </Link>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </AnimateHeight>
                             </li>
 
-                            <li className="menu nav-item">
-                                <button type="button" className={`${currentMenu === 'auth' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('auth')}>
+                            {/* <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'Regions & Constituencies' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Regions & Constituencies')}>
                                     <div className="flex items-center">
                                         <IconMenuAuthentication className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('authentication')}</span>
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Regions & Constituencies')}</span>
                                     </div>
 
-                                    <div className={currentMenu !== 'auth' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                    <div className={currentMenu !== 'Regions & Constituencies' ? '-rotate-90 rtl:rotate-90' : ''}>
                                         <IconCaretDown />
                                     </div>
                                 </button>
@@ -660,20 +583,20 @@ const Sidebar = () => {
                                     <ul className="sub-menu text-gray-500">
                                         <li>
                                             <Link href="/auth/boxed-signin" target="_blank">
-                                                {t('login_boxed')}
+                                                {t('Regions')}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/auth/boxed-signup" target="_blank">
-                                                {t('register_boxed')}
+                                                {t('Constituencies')}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/auth/boxed-lockscreen" target="_blank">
-                                                {t('unlock_boxed')}
+                                                {t('Sectors & Industries')}
                                             </Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/auth/boxed-password-reset" target="_blank">
                                                 {t('recover_id_boxed')}
                                             </Link>
@@ -697,24 +620,54 @@ const Sidebar = () => {
                                             <Link href="/auth/cover-password-reset" target="_blank">
                                                 {t('recover_id_cover')}
                                             </Link>
+                                        </li> 
+                                    </ul>
+                                </AnimateHeight>
+                            </li>*/} 
+
+                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                                <IconMinus className="hidden h-5 w-4 flex-none" />
+                                <span>{t('Geo Locations & Docs')}</span>
+                            </h2>
+                            <li className="menu nav-item">
+                                <button type="button" className={`${currentMenu === 'Geo Locations' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Geo Locations')}>
+                                    <div className="flex items-center">
+                                        <IconMenuPages className="shrink-0 group-hover:!text-primary" />
+                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Geo Locations')}</span>
+                                    </div>
+
+                                    <div className={currentMenu !== 'Geo Locations' ? '-rotate-90 rtl:rotate-90' : ''}>
+                                        <IconCaretDown />
+                                    </div>
+                                </button>
+
+                                <AnimateHeight duration={300} height={currentMenu === 'Geo Locations' ? 'auto' : 0}>
+                                    <ul className="sub-menu text-gray-500">
+                                        <li>
+                                            <Link href="/pages/faq">{t('Regions')}</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/pages/contact-us-cover" target="_blank">
+                                                {t('Constituencies')}
+                                            </Link>
+                                        </li> 
+                                        <li>
+                                            <Link href="/pages/contact-us-cover" target="_blank">
+                                                {t('Sectors & Industries')}
+                                            </Link>
                                         </li>
                                     </ul>
                                 </AnimateHeight>
                             </li>
-
-                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
-                                <IconMinus className="hidden h-5 w-4 flex-none" />
-                                <span>{t('supports')}</span>
-                            </h2>
-
                             <li className="menu nav-item">
-                                <Link href="https://vristo.sbthemes.com" target="_blank" className="nav-link group">
+                                <Link href="#" target="_blank" className="nav-link group">
                                     <div className="flex items-center">
                                         <IconMenuDocumentation className="shrink-0 group-hover:!text-primary" />
                                         <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('documentation')}</span>
                                     </div>
                                 </Link>
                             </li>
+
                         </ul>
                     </PerfectScrollbar>
                 </div>
