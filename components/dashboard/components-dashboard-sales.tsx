@@ -410,7 +410,7 @@ const ComponentsDashboardSales = () => {
                         </Link>
                     </li>
                     <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                        <span>Sales</span>
+                        <span>CWS Performance</span>
                     </li>
                 </ul>
 
