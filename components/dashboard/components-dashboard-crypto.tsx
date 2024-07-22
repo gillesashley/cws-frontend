@@ -792,7 +792,7 @@ const ComponentsDashboardCrypto = () => {
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Crypto</span>
+                    <span>Campaign Monitoring</span>
                 </li>
             </ul>
             <div className="relative mt-5 flex flex-col gap-5 xl:flex-row">
@@ -878,7 +878,7 @@ const ComponentsDashboardCrypto = () => {
                         </ul>
                     </div>
                     <div className="mb-5 grid grid-rows-1 gap-4 border-b border-[#ebedf2] p-4 dark:border-[#253b5c] sm:grid-cols-4">
-                        <div>
+                        {/* <div>
                             <div className="mb-1.5 font-semibold">Action</div>
                             <select className="form-select text-white-dark">
                                 <option>Buy</option>
@@ -943,7 +943,7 @@ const ComponentsDashboardCrypto = () => {
                         </div>
                         <button type="button" className="btn btn-primary self-end">
                             Buy
-                        </button>
+                        </button> */}
                     </div>
                     {/*  selected chart  */}
                     <div className="flex-1 px-4">{isMounted && <ReactApexChart series={currentCoin.series} options={selectedBitCoinChart.options} type="line" height={411} width={'100%'} />}</div>

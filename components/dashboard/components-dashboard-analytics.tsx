@@ -354,7 +354,7 @@ const ComponentsDashboardAnalytics = () => {
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Analytics</span>
+                    <span>User Analytics</span>
                 </li>
             </ul>
             <div className="pt-5">
