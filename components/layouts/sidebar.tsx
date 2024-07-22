@@ -1,38 +1,38 @@
 'use client';
+import IconCaretDown from '@/components/icon/icon-caret-down';
+import IconCaretsDown from '@/components/icon/icon-carets-down';
+import IconMinus from '@/components/icon/icon-minus';
+import IconMenuDashboard from '@/components/icon/menu/icon-menu-dashboard';
+import { IRootState } from '@/store';
+import { toggleSidebar } from '@/store/themeConfigSlice';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import AnimateHeight from 'react-animate-height';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useDispatch, useSelector } from 'react-redux';
-import Link from 'next/link';
-import { toggleSidebar } from '@/store/themeConfigSlice';
-import AnimateHeight from 'react-animate-height';
-import { IRootState } from '@/store';
-import { useState, useEffect } from 'react';
-import IconCaretsDown from '@/components/icon/icon-carets-down';
-import IconMenuDashboard from '@/components/icon/menu/icon-menu-dashboard';
-import IconCaretDown from '@/components/icon/icon-caret-down';
-import IconMinus from '@/components/icon/icon-minus';
-import IconMenuChat from '@/components/icon/menu/icon-menu-chat';
-import IconMenuMailbox from '@/components/icon/menu/icon-menu-mailbox';
-import IconMenuTodo from '@/components/icon/menu/icon-menu-todo';
-import IconMenuNotes from '@/components/icon/menu/icon-menu-notes';
-import IconMenuScrumboard from '@/components/icon/menu/icon-menu-scrumboard';
+// import IconMenuChat from '@/components/icon/menu/icon-menu-chat';
+// import IconMenuMailbox from '@/components/icon/menu/icon-menu-mailbox';
+// import IconMenuTodo from '@/components/icon/menu/icon-menu-todo';
+// import IconMenuNotes from '@/components/icon/menu/icon-menu-notes';
+// import IconMenuScrumboard from '@/components/icon/menu/icon-menu-scrumboard';
 import IconMenuContacts from '@/components/icon/menu/icon-menu-contacts';
 import IconMenuInvoice from '@/components/icon/menu/icon-menu-invoice';
-import IconMenuCalendar from '@/components/icon/menu/icon-menu-calendar';
-import IconMenuComponents from '@/components/icon/menu/icon-menu-components';
-import IconMenuElements from '@/components/icon/menu/icon-menu-elements';
-import IconMenuCharts from '@/components/icon/menu/icon-menu-charts';
-import IconMenuWidgets from '@/components/icon/menu/icon-menu-widgets';
-import IconMenuFontIcons from '@/components/icon/menu/icon-menu-font-icons';
-import IconMenuDragAndDrop from '@/components/icon/menu/icon-menu-drag-and-drop';
-import IconMenuTables from '@/components/icon/menu/icon-menu-tables';
+// import IconMenuCalendar from '@/components/icon/menu/icon-menu-calendar';
+// import IconMenuComponents from '@/components/icon/menu/icon-menu-components';
+// import IconMenuElements from '@/components/icon/menu/icon-menu-elements';
+// import IconMenuCharts from '@/components/icon/menu/icon-menu-charts';
+// import IconMenuWidgets from '@/components/icon/menu/icon-menu-widgets';
+// import IconMenuFontIcons from '@/components/icon/menu/icon-menu-font-icons';
+// import IconMenuDragAndDrop from '@/components/icon/menu/icon-menu-drag-and-drop';
 import IconMenuDatatables from '@/components/icon/menu/icon-menu-datatables';
 import IconMenuForms from '@/components/icon/menu/icon-menu-forms';
-import IconMenuUsers from '@/components/icon/menu/icon-menu-users';
 import IconMenuPages from '@/components/icon/menu/icon-menu-pages';
-import IconMenuAuthentication from '@/components/icon/menu/icon-menu-authentication';
+import IconMenuTables from '@/components/icon/menu/icon-menu-tables';
+import IconMenuUsers from '@/components/icon/menu/icon-menu-users';
+// import IconMenuAuthentication from '@/components/icon/menu/icon-menu-authentication';
 import IconMenuDocumentation from '@/components/icon/menu/icon-menu-documentation';
-import { usePathname } from 'next/navigation';
 import { getTranslation } from '@/i18n';
+import { usePathname } from 'next/navigation';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -91,12 +91,12 @@ const Sidebar = () => {
                     <div className="flex items-center justify-between px-4 py-3">
                         <Link href="/" className="main-logo flex shrink-0 items-center">
                             <img className="ml-[5px] w-8 flex-none" src="/assets/images/logo.svg" alt="logo" />
-                            <span className="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">VRISTO</span>
+                            <span className="align-middle text-2xl font-semibold dark:text-white-light lg:inline ltr:ml-1.5 rtl:mr-1.5">VRISTO</span>
                         </Link>
 
                         <button
                             type="button"
-                            className="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180 dark:text-white-light dark:hover:bg-dark-light/10"
+                            className="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 dark:text-white-light dark:hover:bg-dark-light/10 rtl:rotate-180"
                             onClick={() => dispatch(toggleSidebar())}
                         >
                             <IconCaretsDown className="m-auto rotate-90" />
@@ -108,7 +108,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'dashboard' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('dashboard')}>
                                     <div className="flex items-center">
                                         <IconMenuDashboard className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('dashboard')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('dashboard')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'dashboard' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -143,7 +143,7 @@ const Sidebar = () => {
                                 <Link href="/tables" className="group">
                                     <div className="flex items-center">
                                         <IconMenuTables className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('CWS Content')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('CWS Content')}</span>
                                     </div>
                                 </Link>
                             </li>
@@ -152,7 +152,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'Constitency Content' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Constitency Content')}>
                                     <div className="flex items-center">
                                         <IconMenuDatatables className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Constitency Content')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('Constitency Content')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'Constitency Content' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -175,7 +175,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'Follow-Ups' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Follow-Ups')}>
                                     <div className="flex items-center">
                                         <IconMenuForms className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Follow-Ups')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('Follow-Ups')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'Follow-Ups' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -193,7 +193,7 @@ const Sidebar = () => {
                                         </li>
                                     </ul>
                                 </AnimateHeight>
-                            </li>                
+                            </li>
 
                             <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
@@ -206,7 +206,7 @@ const Sidebar = () => {
                                         <Link href="/apps/contacts" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuContacts className="shrink-0 group-hover:!text-primary" />
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('contacts')}</span>
+                                                <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('contacts')}</span>
                                             </div>
                                         </Link>
                                     </li>
@@ -215,7 +215,7 @@ const Sidebar = () => {
                                         <button type="button" className={`${currentMenu === 'Withdrawals' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Withdrawals')}>
                                             <div className="flex items-center">
                                                 <IconMenuInvoice className="shrink-0 group-hover:!text-primary" />
-                                                <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Withdrawals')}</span>
+                                                <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('Withdrawals')}</span>
                                             </div>
 
                                             <div className={currentMenu !== 'Withdrawals' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -237,6 +237,7 @@ const Sidebar = () => {
                                 </ul>
                             </li>
 
+
                             <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
                                 <span>{t('User & Help')}</span>
@@ -246,7 +247,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'users' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('users')}>
                                     <div className="flex items-center">
                                         <IconMenuUsers className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('users')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('users')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'users' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -270,7 +271,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'Help' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Help')}>
                                     <div className="flex items-center">
                                         <IconMenuPages className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Help')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('Help')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'Help' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -296,10 +297,11 @@ const Sidebar = () => {
                                                 {t('Contact Admin')}
                                             </Link>
                                         </li> 
-                                                                                
+                                   </li>
                                     </ul>
                                 </AnimateHeight>
                             </li>
+
 
                             <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
@@ -309,7 +311,7 @@ const Sidebar = () => {
                                 <button type="button" className={`${currentMenu === 'Geo Locations' ? 'active' : ''} nav-link group w-full`} onClick={() => toggleMenu('Geo Locations')}>
                                     <div className="flex items-center">
                                         <IconMenuPages className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Geo Locations')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('Geo Locations')}</span>
                                     </div>
 
                                     <div className={currentMenu !== 'Geo Locations' ? '-rotate-90 rtl:rotate-90' : ''}>
@@ -326,7 +328,7 @@ const Sidebar = () => {
                                             <Link href="/pages/contact-us-cover" target="_blank">
                                                 {t('Constituencies')}
                                             </Link>
-                                        </li> 
+                                        </li>
                                         <li>
                                             <Link href="/pages/contact-us-cover" target="_blank">
                                                 {t('Sectors & Industries')}
@@ -339,11 +341,10 @@ const Sidebar = () => {
                                 <Link href="#" target="_blank" className="nav-link group">
                                     <div className="flex items-center">
                                         <IconMenuDocumentation className="shrink-0 group-hover:!text-primary" />
-                                        <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('documentation')}</span>
+                                        <span className="text-black dark:text-[#506690] dark:group-hover:text-white-dark ltr:pl-3 rtl:pr-3">{t('documentation')}</span>
                                     </div>
                                 </Link>
                             </li>
-
                         </ul>
                     </PerfectScrollbar>
                 </div>
