@@ -399,7 +399,7 @@ const ComponentsDashboardFinance = () => {
                     </Link>
                 </li>
                 <li className="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
-                    <span>Finance</span>
+                    <span>Points & Payments</span>
                 </li>
             </ul>
             <div className="pt-5">
@@ -532,8 +532,8 @@ const ComponentsDashboardFinance = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-                    {/*  Favorites  */}
+                {/* <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+                    {/*  Favorites  
                     <div>
                         <div className="mb-5 flex items-center font-bold">
                             <span className="text-lg">Favorites</span>
@@ -542,7 +542,7 @@ const ComponentsDashboardFinance = () => {
                             </button>
                         </div>
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 md:mb-5">
-                            {/*  Bitcoin  */}
+                            {/*  Bitcoin  
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full">
@@ -558,7 +558,7 @@ const ComponentsDashboardFinance = () => {
                                     $20,000 <span className="text-sm font-normal text-success">+0.25%</span>
                                 </div>
                             </div>
-                            {/*  Ethereum*/}
+                            {/*  Ethereum*
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full bg-warning p-2">
@@ -574,7 +574,7 @@ const ComponentsDashboardFinance = () => {
                                     $21,000 <span className="text-sm font-normal text-danger">-1.25%</span>
                                 </div>
                             </div>
-                            {/*  Litecoin*/}
+                            {/*  Litecoin*
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full">
@@ -592,7 +592,7 @@ const ComponentsDashboardFinance = () => {
                             </div>
                         </div>
                     </div>
-                    {/*  Prices  */}
+                    {/*  Prices  *
                     <div>
                         <div className="mb-5 flex items-center font-bold">
                             <span className="text-lg">Live Prices</span>
@@ -601,7 +601,7 @@ const ComponentsDashboardFinance = () => {
                             </button>
                         </div>
                         <div className="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                            {/*  Binance */}
+                            {/*  Binance *
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full">
@@ -617,7 +617,7 @@ const ComponentsDashboardFinance = () => {
                                     $21,000 <span className="text-sm font-normal text-danger">-1.25%</span>
                                 </div>
                             </div>
-                            {/*  Tether  */}
+                            {/*  Tether  *
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full">
@@ -633,7 +633,7 @@ const ComponentsDashboardFinance = () => {
                                     $20,000 <span className="text-sm font-normal text-success">+0.25%</span>
                                 </div>
                             </div>
-                            {/*  Solana */}
+                            {/*  Solana *
                             <div className="panel">
                                 <div className="mb-5 flex items-center font-semibold">
                                     <div className="grid h-10 w-10 shrink-0 place-content-center rounded-full bg-warning p-2">
@@ -651,7 +651,7 @@ const ComponentsDashboardFinance = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
                     <div className="grid gap-6 xl:grid-flow-row">
                         {/*  Previous Statement  */}
